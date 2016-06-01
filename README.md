@@ -1,2 +1,2 @@
-# Luci_and_Michael-python
-Luci vs. Michael
+# Luci_and_Michael
+Luci &amp; Michael
