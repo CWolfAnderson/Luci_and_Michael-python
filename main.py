@@ -85,6 +85,21 @@ def main():
 
     pygame.init()
 
+    joystick.init()  # Allow joystick support
+
+    # Joystick controller
+    jController = None
+
+    # If there is a joystick, initialize with JoystickController
+    jCount = joystick.get_count()
+    if jCount > 0:
+        joysticks = [joystick.Joystick(i) for i in range(jCount)]
+        joysticks[0].init()  # Default to first joystick
+        jController = JoystickController(joysticks[0], 0.5)
+
+    else:
+        joystick.quit()  # Deinit joystick module
+
     global all_sprite_list
     global wall_list
     global screen_width
